@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Single+Day&display=swap");
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding-left: 2%;
+	background: #5f8575;
+}
+
+.header .logo-name,
+.header ul {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.header ul {
+	padding: 8px 0;
+	gap: 5.5vw;
+	justify-content: flex-start;
+}
+
+.header .logo-name {
+	justify-content: space-around;
+}
+
+.header .logo-name span,
+.header ul li a {
+	color: white;
+	font-family: "Single Day", cursive;
+}
+
+.header .logo-name img {
+	width: max(2.5vw, 36px);
+	height: max(2.5vw, 36px);
+}
+
+.header ul li {
+	list-style: none;
+}
+
+.header .logo-name span {
+	font-size: max(1.6vw, 26px);
+	user-select: none;
+}
+
+.header ul li a {
+	text-decoration: none;
+	font-size: 20px;
+}

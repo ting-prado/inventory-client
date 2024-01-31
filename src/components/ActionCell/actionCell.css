@@ -1,0 +1,12 @@
+.actions {
+	display: flex;
+	gap: 16px;
+}
+
+.actions svg {
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	filter: brightness(0) saturate(100%) invert(37%) sepia(15%) saturate(3198%)
+		hue-rotate(127deg) brightness(92%) contrast(93%);
+}

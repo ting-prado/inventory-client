@@ -1,0 +1,40 @@
+.inventory {
+	background: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.inventory .functions {
+	margin: 1rem 1rem 2.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.MuiDataGrid-columnHeaders,
+.MuiDataGrid-root {
+	background: white;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell {
+	padding: 0.8rem 0.7rem !important;
+}
+
+.MuiDataGrid-virtualScroller {
+	height: 50vh !important;
+}
+
+.MuiDataGrid-root {
+	border-radius: 0 !important;
+}
+
+.MuiButtonBase-root.MuiButton-root,
+.MuiButtonBase-root.MuiButton-root:hover {
+	border: 1px solid #355e3b;
+	color: #355e3b;
+}
+
+.MuiDataGrid-root .MuiDataGrid-columnHeader:focus,
+.MuiDataGrid-root .MuiDataGrid-cell:focus {
+	outline: none !important;
+}
