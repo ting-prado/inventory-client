@@ -12,6 +12,11 @@
 	font-size: 28px;
 }
 
+.product-modal h1,
+.product-modal h3 {
+	color: var(--prim-color);
+}
+
 .product-modal .MuiPaper-root.MuiDialog-paper,
 .product-modal .main,
 .product-modal div.distribution > div {
@@ -54,5 +59,20 @@
 .btn-group button:nth-child(2),
 .btn-group button:nth-child(2):hover {
 	color: white;
-	background-color: #355e3b;
+	background-color: var(--prim-color);
+}
+
+.MuiInputBase-root.MuiInput-root:hover:not(.Mui-disabled, .Mui-error):before,
+.MuiInputBase-root.MuiInput-root::after {
+	border-bottom: 1px solid var(--sec-color);
+}
+
+.MuiFormLabel-root.MuiInputLabel-root.Mui-focused,
+.MuiInputLabel-shrink {
+	color: var(--prim-color) !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+	border-color: var(--sec-color) !important;
+	border-width: 1px !important;
 }

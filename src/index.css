@@ -1,3 +1,8 @@
+:root {
+	--prim-color: #355e3b;
+	--sec-color: #0000006b;
+}
+
 * {
 	margin: 0;
 	padding: 0;

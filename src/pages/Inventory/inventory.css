@@ -30,8 +30,8 @@
 
 .MuiButtonBase-root.MuiButton-root,
 .MuiButtonBase-root.MuiButton-root:hover {
-	border: 1px solid #355e3b;
-	color: #355e3b;
+	border: 1px solid var(--prim-color);
+	color: var(--prim-color);
 }
 
 .MuiDataGrid-root .MuiDataGrid-columnHeader:focus,
