@@ -3,7 +3,6 @@ import { getInventoryColumns } from "../../utils/getColumns";
 import { useEffect, useRef, useState } from "react";
 import fetchClient from "../../utils/fetch";
 import "./inventory.css";
-import axios from "axios";
 import { Button, TextField } from "@mui/material";
 import ProductModal from "../../components/ProductModal/ProductModal";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
@@ -26,17 +25,15 @@ const Inventory = () => {
 	const [searchValue, setSearchValue] = useState("");
 
 	useEffect(() => {
-		axios
-			.all([fetchClient().get("/branches"), fetchClient().get("/products")])
-			.then(
-				axios.spread((branches, products) => {
-					setData({
-						branches: branches.data,
-						products: products.data
-					});
-				})
-			)
-			.catch((err) => console.log(err));
+		const getData = setTimeout(() => {
+			fetchClient()
+				.get("/branches")
+				.then((res) =>
+					setData((prevState) => ({ ...prevState, branches: res.data }))
+				);
+		}, 250);
+
+		return () => clearTimeout(getData);
 	}, []);
 
 	useEffect(() => {
@@ -47,7 +44,9 @@ const Inventory = () => {
 	const buildQuery = () =>
 		fetchClient()
 			.get(`/products?productName=${searchValue}`)
-			.then((res) => setData({ ...data, products: res.data }))
+			.then((res) =>
+				setData((prevState) => ({ ...prevState, products: res.data }))
+			)
 			.catch((err) => console.log(err));
 
 	const toggleDialog = (type) =>
