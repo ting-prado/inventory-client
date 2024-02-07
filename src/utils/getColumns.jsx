@@ -56,25 +56,3 @@ export const getInventoryColumns = (branches, handleModifyProduct) =>
 			}
 		]
 	);
-
-export const getBranchesColumn = () => [
-	{
-		field: "branchName",
-		headerName: "Branch Name",
-		minWidth: 120,
-		flex: 1
-	},
-	{
-		field: "location",
-		headerName: "Location",
-		minWidth: 120,
-		flex: 1
-	},
-	{
-		field: "actions",
-		headerName: "Actions",
-		minWidth: 80,
-		sortable: false,
-		flex: 1
-	}
-];

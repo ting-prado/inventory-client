@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Mukta:wght@700&display=swap");
+
+.branch-card {
+	border: 1px solid var(--prim-color);
+	border-radius: 5px;
+	padding: 12px;
+}
+
+.branch-card.readonly > div {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
+}
+
+.branch-card .funcs {
+	display: flex;
+	gap: 1rem;
+	padding-top: 7px;
+}
+
+.branch-card .funcs svg {
+	cursor: pointer;
+	filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(1171%)
+		hue-rotate(77deg) brightness(96%) contrast(85%);
+}
+
+.branch-card .img-cont {
+	height: 180px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.branch-card.readonly img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.branch-card h3 {
+	font-family: "Mukta", sans-serif;
+	color: var(--prim-color);
+}
+
+.branch-card .location {
+	font-family: "Inconsolata", monospace;
+}
+
+.branch-card.create,
+.branch-card.edit {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.branch-card.create .btn-group,
+.branch-card.edit .btn-group {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0.5rem;
+	gap: 1rem;
+}

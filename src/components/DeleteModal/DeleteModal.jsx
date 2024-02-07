@@ -7,7 +7,9 @@ const DeleteModal = ({ type, open, toDelete, toggleDialog }) => {
 	const handleDelete = () => {
 		fetchClient()
 			.delete(`/${type === "branch" ? "branches" : "products"}/${toDelete._id}`)
-			.then(() => toggleDialog("delete"))
+			.then(() =>
+				type === "product" ? toggleDialog("delete") : toggleDialog()
+			)
 			.catch((err) => console.log(err));
 	};
 
@@ -19,7 +21,13 @@ const DeleteModal = ({ type, open, toDelete, toggleDialog }) => {
 				{type === "branch" ? "branch" : "product"}?
 			</span>
 			<div className="btn-group">
-				<Button onClick={() => toggleDialog("delete")}>Cancel</Button>
+				<Button
+					onClick={() =>
+						type === "product" ? toggleDialog("delete") : toggleDialog()
+					}
+				>
+					Cancel
+				</Button>
 				<Button onClick={handleDelete}>Accept</Button>
 			</div>
 		</Dialog>

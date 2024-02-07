@@ -23,6 +23,7 @@ const Inventory = () => {
 		product: false,
 		delete: false
 	});
+	const [searchValue, setSearchValue] = useState("");
 
 	useEffect(() => {
 		axios
@@ -36,7 +37,18 @@ const Inventory = () => {
 				})
 			)
 			.catch((err) => console.log(err));
-	}, [isOpen]);
+	}, []);
+
+	useEffect(() => {
+		const getData = setTimeout(() => buildQuery(), 250);
+		return () => clearTimeout(getData);
+	}, [searchValue, isOpen]);
+
+	const buildQuery = () =>
+		fetchClient()
+			.get(`/products?productName=${searchValue}`)
+			.then((res) => setData({ ...data, products: res.data }))
+			.catch((err) => console.log(err));
 
 	const toggleDialog = (type) =>
 		setIsOpen({ ...isOpen, [type]: !isOpen[type] });
@@ -47,12 +59,18 @@ const Inventory = () => {
 		if (item) toModify.current = item;
 	};
 
+	const handleSearchChange = (e) => setSearchValue(e.target.value);
+
 	return (
 		<div className="inventory">
 			<div className="functions">
-				<TextField label="Search" variant="standard" />
+				<TextField
+					onChange={handleSearchChange}
+					label="Search"
+					variant="standard"
+				/>
 				<Button
-					onClick={() => handleModifyProduct("create")}
+					onClick={() => handleModifyProduct("create", "product")}
 					variant="outlined"
 				>
 					+ Add Product
