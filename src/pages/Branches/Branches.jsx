@@ -13,7 +13,8 @@ const Branches = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
-		fetchBranches();
+		const getData = setTimeout(() => fetchBranches(), 250);
+		return () => clearTimeout(getData);
 	}, [isOpen]);
 
 	const fetchBranches = () =>
